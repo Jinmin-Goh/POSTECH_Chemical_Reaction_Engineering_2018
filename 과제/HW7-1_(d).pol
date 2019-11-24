@@ -1,0 +1,33 @@
+No Title  |POLVER05_0 |1
+d(X)/d(V) = -rA / FA0
+d(T)/d(V) = (Ua * (Ta - T) + rA * Hrxn) / (FA0 * (CpA + CpB))
+d(Ta)/d(V) = Ua * (Ta - T) / (mc * Cpcool)
+V(0) = 0
+V(f) = 400
+X(0) = 0
+T(0) = 450
+Ta(0) = 450.3	# this is Ta2
+
+rA = -k * (CA * CB - CC / KC)
+Xe = (2 + 1 / (CA0 * KC) - sqrt((2 + 1 / (CA0 * KC))^2 -4)) / 2
+
+k = 0.01 * exp(E / R * (1 / 300 - 1 / T))
+KC = 10 * exp(Hrxn / R * (1 / 450 - 1 / T))
+
+CA = CA0 * (1 - X)
+CB = CA0 * (1 - X)
+CC = CA0 * X
+
+CA0 = 0.1
+v0 = 2
+FA0 = v0 * CA0
+E = 10000
+R = 1.987
+Hrxn = -6000
+CpA = 15
+CpB = 15
+Cpcool = 1
+Ua = 0.02
+mc = 1000
+
+

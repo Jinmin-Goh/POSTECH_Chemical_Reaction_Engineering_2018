@@ -1,0 +1,18 @@
+No Title  |POLVER05_1 |2
+# 1st CSTR
+f(t1) = tau * k1 * CB0 * exp(-k1 * t1) + tau * k2 - k2 * t1 + CB0 * exp(-k1 * t1) - CA0
+t1(0) = 1
+t1(max) = 1
+t1(min) = 0
+# 2nd CSTR
+f(t2) = tau * k1 * CB0 * exp(-k1 * t2) + tau * k2 - k2 * t2 + CB0 * exp(-k1 * t2) - CA1
+t2(0) = 1
+t2(max) = 1
+t2(min) = 0
+
+tau = 0.001
+k1 = 1000
+k2 = 0.5
+CA0 = 0.001635
+CB0 = 0.001635
+CA1 = CB0 * exp(-k1 * t1) - k2 * t1

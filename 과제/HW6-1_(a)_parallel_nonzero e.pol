@@ -1,0 +1,13 @@
+No Title  |POLVER05_1 |2
+f(t) = (CA0 - (CB0 * exp(-k1 * t) - k2 * t)) * (1 + e * X_D) - 2 * tau * (k1 * CB0 * exp(-k1 * t) + k2)
+t(0) = 1 
+t(max) = 1
+t(min) = 0
+
+X_D = 1 - exp(-k1 * t)
+e = -0.05
+tau = 0.001
+k1 = 1000
+k2 = 0.5
+CA0 = 0.001635
+CB0 = 0.001635

@@ -1,0 +1,51 @@
+No Title  |POLVER05_0 |1
+# ODEs (Mole balance)
+d(FA)/d(V) = rA
+d(FB)/d(V) = rB
+d(FC)/d(V) = rC
+d(FD)/d(V) = rD
+d(FE)/d(V) = rE
+
+# Initial Conditions
+v0 = 200	# volumetric flow
+t = V / v0	# space time
+V(0) = 0
+V(f) = 800
+
+FA(0) = 9.9	# H2, excess
+FB(0) = 0.075	# m-Xylene, 75%
+FC(0) = 0	# Benzene, Undesired
+FD(0) = 0	# Methane, Undesired
+FE(0) = 0	# p-Xylene, Desired
+FI = 0.025	# inert, 25%
+FT = FA + FB + FC + FD + FE + FI
+
+CT0 = 0.05	# initial total concentration
+CA = CT0 * FA / FT
+CB = CT0 * FB / FT
+CC = CT0 * FC / FT
+CD = CT0 * FD / FT
+CE = CT0 * FE / FT
+
+# Rate laws
+k1 = 0.22
+k2 = 0.71
+rA1 = -k1 * CB
+rA2 = -k2 * CB
+rB1 = rA1
+rC1 = -rA1
+rD1 = -rA1
+rB2 = rA2
+rE2 = -rA2
+rA = rA1 + rA2
+rB = rB1 + rB2
+rC = rC1
+rD = rD1
+rE = rE2
+
+# Selectivity & Yield
+X = (0.075 - FB) / 0.075
+S = FE / (FD + FC + 0.00000001)	# overall selectivity
+Y = FE / (0.075000001 - FB)		# overall yield
+
+

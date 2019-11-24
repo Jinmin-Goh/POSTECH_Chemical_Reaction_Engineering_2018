@@ -1,0 +1,12 @@
+No Title  |POLVER05_0 |1
+C_A0 = 0.02128
+C_A = C_A0 * (1 - X) / (1 + X)
+F_A0 = 0.16075
+r_A = - 20 * C_A / (1 + C_A)^2
+
+# CSTR-PFR sequence
+V_CSTR = F_A0 * X / (-r_A)
+d(V_PFR) / d(X) = F_A0 / (-r_A)
+X(0) = 0.1
+X(f) = 0.9
+V_PFR(0) = 1.406

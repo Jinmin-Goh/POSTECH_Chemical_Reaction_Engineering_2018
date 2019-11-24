@@ -1,0 +1,24 @@
+No Title  |POLVER05_0 |1
+#For batch reactor
+# rxn : A+ 1/3B -> 2/3C
+
+Ca0 = 0.2 #Cb0 = 0.2, Cc0 = 0
+d = -2/3 # 2/3 - 1 - 1/3
+ya0 = 1/2 # fraction of A
+e = 0 # epsilon is 0 because volume is const. So we don't consider this.
+k = 40 # reaction rate const.
+
+r_a = -3 * k * Ca0 ^ 2 * ((1 - X) ^ (3/2)) * ((1 - 1/3*X) ^ (1/2))
+# time 3 due to stoichiometry
+Ca = Ca0 * (1 - X)
+Cb = Ca0 * (1 - 1/3*X)
+Cc = Ca0 * 2/3 * X
+
+t(0) = 0
+X(0) = 0
+X(f) = 0.9
+d(t) / d(X) = - Ca0 / r_a # t is a reaction time
+
+
+
+

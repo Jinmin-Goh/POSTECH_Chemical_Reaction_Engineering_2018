@@ -1,0 +1,15 @@
+No Title  |POLVER05_0 |1
+C_A0 = 0.02128
+C_A9 = C_A0 * (1 - 0.9) / (1 + 0.9) # concentration at X=0.9
+C_A = C_A0 * (1 - X) / (1 + X)
+F_A0 = 0.16075
+X2 = 0.9
+r_A = - 20 * C_A / (1 + C_A)^2
+r_A9 = - 20 * C_A9 / (1 + C_A9)^2 # reaction rate at X=0.9
+
+# PFR-CSTR sequence
+V_CSTR = F_A0 * (X2 - X) / (-r_A9)
+d(V_PFR) / d(X) = F_A0 / (-r_A)
+X(0) = 0.1
+X(f) = 0.9
+V_PFR(0) = 1.406

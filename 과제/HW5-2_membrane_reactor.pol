@@ -1,0 +1,30 @@
+No Title  |POLVER05_0 |1
+v0 = 10		# initial volumeric flow rate
+P0 = 10		# initial pressure
+Ke = 1.44	# equilibrium constant
+k = 1.37	# reaction rate
+kH = 0.1	# mass transfer coefficient
+CT0 = 0.4
+CA0 = 0.5 * CT0
+CB0 = 0.5 * CT0
+FT0 = 4		# initial total molat flow rate
+FT = FA+FB+FC+FD	# total molar flow rate
+CA = CT0 * FA / FT
+CB = CT0 * FB / FT
+CC = CT0 * FC / FT
+CD = CT0 * FD / FT
+FA(0) = 2
+FB(0) = 2
+FC(0) = 0
+FD(0) = 0
+rA = -k * (CA * CB - CC * CD / Ke)
+RH = kH * CD
+
+
+d(FA)/d(W) = rA
+d(FB)/d(W) = rA
+d(FC)/d(W) = -rA
+d(FD)/d(W) = -rA - RH
+W(0) = 0
+W(f) = 500
+

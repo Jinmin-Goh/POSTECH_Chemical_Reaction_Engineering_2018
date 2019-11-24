@@ -1,0 +1,24 @@
+No Title  |POLVER05_0 |1
+#For PFR
+# rxn : A+ 1/3B -> 2/3C
+
+Ca0 = 0.2 #Cb0 = 0.2, Cc0 = 0
+d = -2/3 # 2/3 - 1 - 1/3
+ya0 = 1/2 # fraction of A
+e = d * ya0 #epsilon
+k = 40 # reaction rate const.
+
+r_a = -3*k * Ca0 ^ 2 * ((1 - X) / (1 - 1/3*X)) ^ (3/2)
+# time 3 because k is for B and r_a = 3*r_b
+Ca = Ca0 * (1 - X) / (1 - 1/3*X)
+Cb = Ca0
+Cc = Ca0 * 2/3 * X / (1 - 1/3*X)
+
+t(0) = 0
+X(0) = 0
+X(f) = 0.9
+d(t) / d(X) = - Ca0 / r_a # t is a space time
+
+
+
+

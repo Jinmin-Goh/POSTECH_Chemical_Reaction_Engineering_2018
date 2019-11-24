@@ -1,0 +1,8 @@
+No Title  |POLVER05_1 |2
+f(z) = 1 - 2 * b0 * z / P0
+z(0) = 0
+z(min) = 0
+z(max) = 60
+b0 = 0.1011
+P0 = 10		# initial pressure
+

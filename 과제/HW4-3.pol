@@ -1,0 +1,13 @@
+No Title  |POLVER05_1 |2
+
+f(X) = 2902 * X / (exp(-E / R * (1 / T - 1 / T_0)) * ((1 - X)^2 - X^2 / K_C)) - V
+X(min) = 0
+X(max) = 1
+
+K_C = 3.0 * exp(H_rx / R * (1 / T_0 - 1 / T))	# equilibrium const.
+H_rx = -25000	# rxn enthalpy
+E = 15000	# activation E
+R = 1.986	# gas const. in cal.
+T_0 = 300	# fixed T
+T = 310		# increase and check maximum value by plotting
+V = 3785	# vol. of CSTR
